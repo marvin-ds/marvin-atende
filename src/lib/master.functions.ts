@@ -1,0 +1,12 @@
+import { callBackend } from '@/blink/backend'
+export const masterKpis = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"masterKpis",data:args.data})
+export const listMasterSubscriptions = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"listMasterSubscriptions",data:args.data})
+export const listCompanies = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"listCompanies",data:args.data})
+export const suspendCompany = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"suspendCompany",data:args.data})
+export const extendTrial = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"extendTrial",data:args.data})
+export const createCompanyWithOwner = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"createCompanyWithOwner",data:args.data})
+export const listPlansBasic = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"listPlansBasic",data:args.data})
+export const getSuperAdminEmails = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"getSuperAdminEmails",data:args.data})
+export const setSuperAdminEmails = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"setSuperAdminEmails",data:args.data})
+export const resetCompanyOwnerPassword = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"resetCompanyOwnerPassword",data:args.data})
+export const getCompanyDetails = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/master.functions", name:"getCompanyDetails",data:args.data})

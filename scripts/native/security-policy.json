@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "defaults": {
+    "require_auth": true
+  },
+  "modules": {
+    "db": {
+      "require_auth": true,
+      "raw_sql": {
+        "allowed": false
+      },
+      "tables": {
+        "company": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "company_user": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "user_roles": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "app_config": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "profiles": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "agent_config": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "whatsapp_instances": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "mensagens": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "crm_cards": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "contact_pause": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "crm_stage": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "produto": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "lead_nota": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "lead_evento": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "agendamento": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "google_integration": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "plan": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "subscription": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "company_billing": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "campaign": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "campaign_target": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "message_template": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "csat_response": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "audit_log": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "webhook_endpoint": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "api_token": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "webhook_delivery_log": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "billing_event_log": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "fin_categoria": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "fin_lancamento": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "credit_ledger": {
+          "read": "deny",
+          "write": "deny"
+        },
+        "template_owner": {
+          "read": "deny",
+          "write": "deny"
+        }
+      }
+    }
+  }
+}

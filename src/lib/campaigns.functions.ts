@@ -1,0 +1,10 @@
+import { callBackend } from '@/blink/backend'
+export const listCampaigns = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"listCampaigns",data:args.data})
+export const getCampaign = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"getCampaign",data:args.data})
+export const listAvailableTags = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"listAvailableTags",data:args.data})
+export const previewAudience = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"previewAudience",data:args.data})
+export const saveCampaign = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"saveCampaign",data:args.data})
+export const deleteCampaign = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"deleteCampaign",data:args.data})
+export const startCampaign = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"startCampaign",data:args.data})
+export const pauseCampaign = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"pauseCampaign",data:args.data})
+export const cancelCampaign = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/campaigns.functions", name:"cancelCampaign",data:args.data})

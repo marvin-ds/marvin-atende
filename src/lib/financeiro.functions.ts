@@ -1,0 +1,11 @@
+import { callBackend } from '@/blink/backend'
+export const enableFinanceiro = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"enableFinanceiro",data:args.data})
+export const finKpis = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"finKpis",data:args.data})
+export const listLancamentos = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"listLancamentos",data:args.data})
+export const listCategorias = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"listCategorias",data:args.data})
+export const upsertLancamento = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"upsertLancamento",data:args.data})
+export const marcarPago = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"marcarPago",data:args.data})
+export const deleteLancamento = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"deleteLancamento",data:args.data})
+export const upsertCategoria = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"upsertCategoria",data:args.data})
+export const deleteCategoria = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"deleteCategoria",data:args.data})
+export const finStatus = (args:any={}) => callBackend('/api/rpc', {module:"src/lib/financeiro.functions", name:"finStatus",data:args.data})

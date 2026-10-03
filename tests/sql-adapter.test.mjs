@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{adaptBlinkSql}from'./sql-adapter.bundle.mjs';import{ownerEligible}from'./owner.bundle.mjs';
+const raw={sql:async()=>({rows:[{email:'owner@example.invalid',emailVerified:'1',userId:'u1',companyId:'c1',createdAt:'now'}]}),batch:async()=>({results:[{rows:[{companyId:'c1',creditosSaldo:'100'}]}]})};
+test('verified owner works with real Blink camelCase SQL contract',async()=>{const sql=adaptBlinkSql(raw);assert.equal(await ownerEligible({userId:'u1',email:'owner@example.invalid'},{BLINK_PROJECT_ID:'copy',OWNER_PROJECT_ID:'copy',OWNER_EMAIL:'owner@example.invalid'},sql),true);const row=(await sql.sql('SELECT')).rows[0];assert.equal(row.company_id,'c1');assert.equal(row.user_id,'u1')});
+test('batch results restore database column names',async()=>{const r=await adaptBlinkSql(raw).batch([]);assert.equal(r.results[0].rows[0].creditos_saldo,'100')});

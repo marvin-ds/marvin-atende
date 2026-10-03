@@ -1,0 +1,90 @@
+{
+  "source": "emergent",
+  "fileCount": 261,
+  "isCompatible": true,
+  "frontend": "vite-react",
+  "sourceFramework": "vite-react",
+  "backends": [
+    {
+      "language": "python",
+      "framework": "fastapi",
+      "files": [
+        "backend/legacy/server.py",
+        "backend/legacy/setup/gen_keys.py",
+        "backend/legacy/setup/write_env.py"
+      ],
+      "supported": false,
+      "portTarget": "hono"
+    }
+  ],
+  "databases": [],
+  "auth": {
+    "detected": "none"
+  },
+  "monorepo": false,
+  "files": {
+    "copyVerbatim": 253,
+    "relocateLegacy": [
+      "backend/.env.example",
+      "backend/requirements.txt",
+      "backend/server.py",
+      "setup/gen_keys.py",
+      "setup/write_env.py"
+    ],
+    "needsPort": [
+      "backend/legacy/server.py",
+      "backend/legacy/setup/gen_keys.py",
+      "backend/legacy/setup/write_env.py"
+    ]
+  },
+  "risks": [
+    {
+      "severity": "warn",
+      "message": "Python (fastapi) backend isn't supported at Blink runtime. Port target: hono.",
+      "files": [
+        "backend/legacy/server.py",
+        "backend/legacy/setup/gen_keys.py",
+        "backend/legacy/setup/write_env.py"
+      ]
+    },
+    {
+      "severity": "info",
+      "message": "5 legacy backend file(s) relocated to /backend/legacy/. Port them into /backend/api/index.ts (Hono).",
+      "files": [
+        "backend/.env.example",
+        "backend/requirements.txt",
+        "backend/server.py",
+        "setup/gen_keys.py",
+        "setup/write_env.py"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "backend-python",
+      "prompt": "Fastapi (python) backend detected — Blink runs Hono on Cloudflare Workers (TS only). What should I do?",
+      "options": [
+        {
+          "id": "port",
+          "label": "Port to Hono — translate routes one by one (recommended)"
+        },
+        {
+          "id": "stub",
+          "label": "Stub for now — keep originals in /backend/legacy/, you'll port later"
+        },
+        {
+          "id": "skip",
+          "label": "Skip backend — frontend-only migration"
+        }
+      ]
+    }
+  ],
+  "skillsToInvoke": [
+    "migrations"
+  ],
+  "notes": [
+    "Source is an Emergent ZIP export (no GitHub history).",
+    "Legacy backend detected (python). 5 file(s) relocated to /backend/legacy/. Port routes to /backend/api/index.ts (Hono).",
+    "Monorepo-with-stub-root layout detected — hoisted 182 file(s) from /frontend/ to root, dropped 0 stub file(s)."
+  ]
+}
